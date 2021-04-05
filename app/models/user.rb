@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum role: {student: 1, teacher: 2, admin: 3}
+  has_many :user_assignments
+  has_many :assigments, through: :user_assignments
 end
